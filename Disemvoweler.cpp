@@ -33,27 +33,33 @@ void Disemvoweler::removeSpaces(){
 
 void Disemvoweler::removeVowels(){
 	removedVowels = removedSpaces;
+	std::string vowels;
 	int vowelsRemoved = 0;
 	for (size_t i = 0, j = 0; i < removedSpaces.size(); i++, j++){
 		if (removedSpaces[i] == 'a'){
 			j--;
 			vowelsRemoved++;
+			vowels.append("a");
 		}
 		else if (removedSpaces[i] == 'e'){
 			j--;
 			vowelsRemoved++;
+			vowels.append("e");
 		}
 		else if (removedSpaces[i] == 'i'){
 			j--;
 			vowelsRemoved++;
+			vowels.append("i");
 		}
 		else if (removedSpaces[i] == 'o'){
 			j--;
 			vowelsRemoved++;
+			vowels.append("o");
 		}
 		else if (removedSpaces[i] == 'u'){
 			j--;
 			vowelsRemoved++;
+			vowels.append("u");
 		}
 		else{
 			removedVowels[j] = removedSpaces[i];
@@ -65,6 +71,9 @@ void Disemvoweler::removeVowels(){
 	}
 
 	std::cout << removedVowels << std::endl;
+
+	std::cout << "Vowels removed: ";
+	std::cout << vowels << std::endl;
 }
 
 std::string Disemvoweler::getStringWithoutSpaces(){
