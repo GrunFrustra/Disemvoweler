@@ -1,0 +1,1 @@
+Takes in a string upon startup.
